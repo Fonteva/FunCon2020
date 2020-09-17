@@ -1,0 +1,21 @@
+<aura:component implements="FDService:SparkPlugComponentInterface" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent type="FDService:SparkPlugCompleteEvent" name="SparkPlugCompleteEvent"/>
+    <aura:registerEvent type="FDService:SparkPlugLoadedEvent" name="SparkPlugLoadedEvent"/>
+
+<!--    <div style="max-width: 50%" class="slds-p-top_small">-->
+<!--        <h3>Showing the SparkPlug for extension point: {!v.extensionPoint}</h3>-->
+<!--        <p>Wouldn't you love to buy something else?</p>-->
+
+<!--        <div class="slds-p-top_small">-->
+<!--            <lightning:button-->
+<!--                    variant="brand"-->
+<!--                    label="Yes"-->
+<!--                    onclick="{!c.handleClick }"/>-->
+<!--        </div>-->
+<!--    </div>-->
+    <c:sparkPlug
+            onclick="{!c.handleClick}"
+            plugData="{!v.data}"
+            extensionPoint="{!v.extensionPoint}"/>
+</aura:component>
